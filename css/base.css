@@ -1,0 +1,63 @@
+body {
+    background: #FFF;
+    font-size: 14px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.mui-content {
+    background: #FFF;
+    margin-bottom: 50px;
+}
+
+.my-footer, .my-header {
+    background: #006699;
+}
+
+.my-header .mui-title {
+    color: #FFF;
+}
+
+.my-header .mui-icon {
+    color: #FFF;
+}
+
+.my-footer .mui-tab-item {
+    color: #FFF;
+}
+
+.my-footer .mui-tab-item.mui-active {
+    color: darkorange;
+}
+
+.mui-scroll-wrapper {
+    top: 44px;
+    bottom: 50px;
+}
+
+
