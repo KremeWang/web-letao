@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>搜索中心</title>
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>搜索结果</title>
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="./css/base.css"/>
-    <link rel="stylesheet" href="./css/search.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/search-result.css">
     <script src="assets/mui/js/mui.min.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
-    <h1 class="mui-title">搜索中心</h1>
+    <h1 class="mui-title">搜索结果</h1>
     <a href="javascript:;" class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
 <nav class="mui-bar mui-bar-tab footer my-footer">
@@ -34,21 +34,21 @@
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
-<div class="mui-content">
+<div id="refresh">
     <div class="container">
-        <!-- 搜索框 -->
-        <div class="search">
-            <input type="text" placeholder="搜索您喜欢的商品">
-            <input type="button" value="搜索" id="search-btn">
+        <div class="mui-row">
+            <div class="mui-col-xs-6 search-bar" id="priceSort">
+                价格&nbsp;<span class="fa fa-angle-down"></span>
+            </div>
+            <div class="mui-col-xs-6 search-bar" id="numSort">
+                销量&nbsp;<span class="fa fa-angle-down"></span>
+            </div>
         </div>
-        <!-- 搜索历史 -->
-        <div class="history-top mui-clearfix">
-            <span class="title mui-pull-left">搜索历史</span>
-            <span class="clear mui-pull-right mui-icon mui-icon-trash" id="clearBtn">清空历史</span>
-        </div>
-        <ul class="mui-table-view" id="history-box">
+        <div class="product">
+            <ul class="list mui-clearfix" id="productBox">
 
-        </ul>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
