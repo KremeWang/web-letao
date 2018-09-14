@@ -1,16 +1,90 @@
-.search-bar{
-    text-align:center;
-    /* width:100%; */
-    background:#efeff4;
-    padding:8px 0;
-    font-size:14px;
-    margin-bottom:15px;
+.filter {
+    width: 100%;
 }
 
-#refresh{
-    position:absolute;
-    left:0;
-    width:100%;
-    top:44px;
-    bottom:50px;
+.filter .mui-col-xs-6 {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: center;
+    background: #efeff4;
+}
+
+.filter .mui-icon {
+    font-size: 12px;
+}
+
+#refreshContainer {
+    position: absolute;
+    left: 0;
+    top: 44px;
+    bottom: 50px;
+
+}
+
+.product {
+    padding: 0 10px;
+}
+
+.product .title {
+    width: 100%;
+}
+
+.product ul {
+    padding: 6px 0;
+}
+
+.product ul li {
+    width: 50%;
+    float: left;
+    padding: 5px;
+}
+
+.product ul li a {
+    display: block;
+    box-shadow: 0 0 5px #ccc;
+    padding: 5px;
+}
+
+.product ul li img {
+    width: 100%;
+}
+
+.product ul li .name{
+    display: block;
+    color: #8f8f94;
+    font-size: 14px;
+    text-align: center;
+    line-height: 18px;
+    height: 38px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.product ul li p {
+    text-align: center;
+    padding-top:6px;
+}
+
+.product ul li p span:first-child {
+    color: #f20;
+    padding-right: 2px;
+}
+
+.product ul li p span:last-child {
+    text-decoration: line-through;
+    padding-left: 2px;
+}
+
+.product ul li .buy-now {
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #006699;
+    color: #FFF;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 auto 5px auto;
 }

@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <title>Document</title>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>搜索结果</title>
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/search-result.css">
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/search-result.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
     <h1 class="mui-title">搜索结果</h1>
 </header>
-<nav class="mui-bar mui-bar-tab footer my-footer">
+<nav class="mui-bar mui-bar-tab my-footer">
     <a class="mui-tab-item mui-active" href="index.html">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
@@ -33,22 +37,42 @@
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
-<div id="refresh">
-    <div class="container">
-        <div class="mui-row">
-            <div class="mui-col-xs-6 search-bar" id="priceSort">
-                价格&nbsp;<span class="fa fa-angle-down"></span>
+<div id="refreshContainer">
+    <div>
+        <div class="mui-row filter">
+            <div class="mui-col-xs-6" id="priceSort">
+                价格
+                <span class="mui-icon mui-icon-arrowdown"></span>
             </div>
-            <div class="mui-col-xs-6 search-bar" id="numSort">
-                销量&nbsp;<span class="fa fa-angle-down"></span>
+            <div class="mui-col-xs-6">
+                销量
+                <span class="mui-icon mui-icon-arrowdown"></span>
             </div>
         </div>
         <div class="product">
-            <ul class="list mui-clearfix" id="productBox">
+            <ul class="mui-clearfix" id="search-box">
 
             </ul>
         </div>
     </div>
 </div>
+<script id="searchTpl" type="text/template">
+    <% for(var i=0;i
+    <data.length;i++){ %>
+    <li>
+        <a href="detail.html?id=<%=data[i].id %>">
+            <img src="<%=data[i].pic[0].picAddr %>">
+                <span class="name">
+                    <%=data[i].proName %>
+                </span>
+            <p>
+                <span>¥<%=data[i].price %></span>
+                <span>¥<%=data[i].oldPrice %></span>
+            </p>
+            <span class="buy-now">立即购买</span>
+        </a>
+    </li>
+    <% } %>
+</script>
 </body>
 </html>
