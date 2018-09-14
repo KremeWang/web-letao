@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="css/category.css">
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
-    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
     <script src="js/base.js"></script>
     <script src="js/common.js"></script>
     <script src="js/category.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav header my-header">
-    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a href="index.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
     <h1 class="mui-title">乐淘云购</h1>
     <a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
@@ -41,40 +41,44 @@
     </a>
 </nav>
 <div class="my-content">
-    <div class="cate-list">
+    <div class="category-left">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
-                <div id="leftCate">
+                <div class="links" id="links">
 
                 </div>
             </div>
         </div>
     </div>
-    <div class="cont-list">
+    <div class="category-right">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
-                <div class="waper" id="rightCate">
+                <ul class="brand-list mui-clearfix">
 
-                </div>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<script id="leftCateTpl" type="text/html">
-    <% for(var i=0;i<data.length;i++){ %>
-    <a href="javascript:;" data-id="<%=data[i].id %>" class="items getSecond"><%= data[i].categoryName %></a>
+<script id="category-first" type="text/template">
+    <% for(var i=0;i<result.length;i++){ %>
+    <a
+            href="#"
+            data-id="<%=result[i].id %>"><%=result[i].categoryName %></a>
     <% } %>
 </script>
-<script id="rightCateTpl" type="text/html">
-    <% for(var i=0;i<data.length;i++){ %>
-    <a href="#" class="items">
-        <img src="<%=data[i].brandLogo %>">
-        <span><%=data[i].brandName %></span>
-    </a>
+<script id="category-second" type="text/template">
+    <% for(var i=0;i<rows.length;i++){ %>
+    <li>
+        <a href="#">
+            <img src="<%=rows[i].brandLogo %>">
+            <p><%=rows[i].brandName %></p>
+        </a>
+    </li>
     <% } %>
 
-    <% if(!data.length){ %>
-    <span>暂无数据</span>
+    <% if(!rows.length){ %>
+    <div class="noresult">暂无数据</div>
     <% } %>
 </script>
 </body>

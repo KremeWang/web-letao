@@ -57,14 +57,13 @@
     </div>
 </div>
 <script id="searchTpl" type="text/template">
-    <% for(var i=0;i
-    <data.length;i++){ %>
+    <% for(var i=0;i<data.length;i++){ %>
     <li>
         <a href="detail.html?id=<%=data[i].id %>">
             <img src="<%=data[i].pic[0].picAddr %>">
-                <span class="name">
-                    <%=data[i].proName %>
-                </span>
+					<span class="name">
+						<%=data[i].proName %>
+					</span>
             <p>
                 <span>¥<%=data[i].price %></span>
                 <span>¥<%=data[i].oldPrice %></span>

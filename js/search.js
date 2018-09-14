@@ -29,5 +29,6 @@ $(function () {
     $('#clearBtn').on('click', function () {
         $('#history-box').html("");
         localStorage.removeItem("keyArr");
+        keyArr.length = 0;
     });
 })

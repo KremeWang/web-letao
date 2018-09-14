@@ -18,7 +18,7 @@ $(function(){
  * @return {string}     参数名称对应的参数值
  */
 function getParamsByUrl(url, name) {
-
+	//"http://localhost:3000/myproject/search-result.html?keyword%20=333"
 	var params = url.substr(url.indexOf('?')+1);
 
 	var param = params.split('&');
