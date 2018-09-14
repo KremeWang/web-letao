@@ -2,12 +2,13 @@
     width: 100%;
 }
 
-.filter .mui-col-xs-6 {
+.filter div {
     height: 35px;
     line-height: 35px;
     font-size: 14px;
     text-align: center;
     background: #efeff4;
+    width: 50%;
 }
 
 .filter .mui-icon {
@@ -19,7 +20,7 @@
     left: 0;
     top: 44px;
     bottom: 50px;
-
+    width: 100%;
 }
 
 .product {
