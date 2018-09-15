@@ -12,10 +12,17 @@ $(function () {
             keyArr.unshift(keyWords);
             //存储到本地localStorage,只能存储字符串,需要转格式
             localStorage.setItem('keyArr', JSON.stringify(keyArr)); //将数组转换为字符串
-            location.href = "search-result.html?keyword =" + keyWords;
+            location.href = "search-result.html?keyword=" + keyWords;
         }else {
             alert('请输入搜索关键字...');
         }
+    })
+
+    $('#history-box').on('click', 'li', function() {
+        //console.log(this);
+        var key = $(this).html();
+        //console.log(key);
+        location.href = "search-result.html?keyword=" + key;
     })
 
     var keyArr = [];

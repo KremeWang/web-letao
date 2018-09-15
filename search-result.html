@@ -45,13 +45,13 @@
                 价格
                 <span class="mui-icon mui-icon-arrowdown"></span>
             </div>
-            <div class="mui-col-xs-6" id="numSort">
+            <div class="mui-col-xs-6">
                 销量
                 <span class="mui-icon mui-icon-arrowdown"></span>
             </div>
         </div>
         <div class="product">
-            <ul class="mui-clearfix" id="product-box">
+            <ul class="mui-clearfix" id="search-box">
 
             </ul>
         </div>
@@ -62,9 +62,9 @@
     <li>
         <a href="detail.html?id=<%=data[i].id %>">
             <img src="<%=data[i].pic[0].picAddr %>">
-					<span class="name">
-						<%=data[i].proName %>
-					</span>
+                <span class="name">
+                    <%=data[i].proName %>
+                </span>
             <p>
                 <span>¥<%=data[i].price %></span>
                 <span>¥<%=data[i].oldPrice %></span>
