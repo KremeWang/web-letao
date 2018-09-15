@@ -19,3 +19,6 @@
 .mui-input-row label~input {
     font-size: 14px;
 }
+#register-btn {
+    width: 80%;
+}
