@@ -45,7 +45,7 @@ $(function () {
             data:{
                 username: username,
                 password: password,
-                moblie: mobile,
+                mobile: mobile,
                 vCode: vCode
             },
             success: function(res) {
