@@ -36,41 +36,48 @@ $(function () {
     // 添加收货地址
     $('#addAdress').on('click', function () {
         var url = '/address/addAddress';
-        var data = {
-            address: $.trim($('[name="address"]').val()),
-            addressDetail: $.trim($('[name="addressDetail"]').val()),
-            recipients: $.trim($('[name="recipients"]').val()),
-            postcode: $.trim($('[name="postcode"]').val())
-        };
 
-        if (!data.recipients) {
+        var address = $.trim($('[name="address"]').val());
+        var addressDetail = $.trim($('[name="addressDetail"]').val());
+        var recipients = $.trim($('[name="recipients"]').val());
+        var postcode = $.trim($('[name="postcode"]').val());
+        var id;
+
+
+        if (!recipients) {
             mui.toast('请输入收货人');
             return;
         }
-        if (!data.postcode) {
+        if (!postcode) {
             mui.toast('请输入邮政编码');
             return;
         }
-        if (!data.address) {
+        if (!address) {
             mui.toast('请选择地址');
             return;
         }
 
-        if (!data.addressDetail) {
+        if (!addressDetail) {
             mui.toast('请输入详细地址');
             return;
         }
 
         // 修改收货地址
         if (!flag) {
-            data.id = getParamsByUrl(location.href, 'id');
+            id = getParamsByUrl(location.href, 'id');
             url = "/address/updateAddress";
         }
 
         $.ajax({
             url: url,
             type: 'post',
-            data: data,
+            data: {
+                address: address,
+                addressDetail: addressDetail,
+                recipients: recipients,
+                postcode: postcode,
+                id: id
+            },
             beforeSend: function () {
                 $('#addAdress').html('正在' + (flag ? '添加' : '修改') + '收货地址');
             },
