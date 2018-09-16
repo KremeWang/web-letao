@@ -23,7 +23,7 @@ $(function () {
             type: 'get',
             success: function (result) {
                 if (result.success) {
-                    location.href = "index.html";
+                    location.href = "login.html";
                 } else {
                     mui.toast('退出登录失败');
                 }
