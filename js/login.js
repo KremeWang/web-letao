@@ -27,10 +27,16 @@ $(function () {
                 $('#login-btn').html("正在登录...");
             },
             success: function(res) {
+                //console.log(res);
+                if(res.error == 403) {
+                    mui.toast("登录失败," +res.message);
+                    //location.href = "login.html";
+                    $('#login-btn').html("登录");
+                    return;
+                }
+
                 mui.toast("登录成功");
-
                 $('#login-btn').html("登录");
-
                 setTimeout(function(){
                     location.href = "user.html";
                 }, 2000);

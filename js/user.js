@@ -6,7 +6,7 @@ $(function () {
         url: '/user/queryUserMessage',
         type: 'get',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             if (result.error == 400) {
                 localStorage.setItem('returnUrl', location.href);
                 location.href = "login.html";
