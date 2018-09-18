@@ -43,7 +43,6 @@ $(function () {
         var postcode = $.trim($('[name="postcode"]').val());
         var id;
 
-
         if (!recipients) {
             mui.toast('请输入收货人');
             return;
