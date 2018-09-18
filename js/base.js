@@ -1,13 +1,19 @@
-$(function(){
+$(function () {
 
-	// 恢复A元素的跳转
-	$('body').on('tap', 'a', function(){
+    // 恢复A元素的跳转
+    $('body').on('tap', 'a', function () {
 
-		mui.openWindow({
-			url: $(this).attr('href')
-		});
+        mui.openWindow({
+            url: $(this).attr('href')
+        });
 
-	});
+    });
+
+
+    // 页面滚动区域
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005
+    });
 
 });
 
@@ -18,23 +24,23 @@ $(function(){
  * @return {string}     参数名称对应的参数值
  */
 function getParamsByUrl(url, name) {
-	//"http://localhost:3000/myproject/search-result.html?keyword%20=333"
-	var params = url.substr(url.indexOf('?')+1);
+    //"http://localhost:3000/myproject/search-result.html?keyword%20=333"
+    var params = url.substr(url.indexOf('?') + 1);
 
-	var param = params.split('&');
+    var param = params.split('&');
 
-	for(var i=0;i<param.length;i++){
+    for (var i = 0; i < param.length; i++) {
 
-		var current = param[i].split('=');
+        var current = param[i].split('=');
 
-		if(current[0] == name){
+        if (current[0] == name) {
 
-			return current[1]
+            return current[1]
 
-		}
+        }
 
-	}
+    }
 
-	return null;
+    return null;
 
 }
