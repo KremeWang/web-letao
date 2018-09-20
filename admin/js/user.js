@@ -2,6 +2,7 @@
  * Created by Administrator on 2018/9/18.
  */
 $(function(){
+    //获取数据库的注册用户数据
     $.ajax({
         url: '/user/queryUser',
         type: 'get',
@@ -16,19 +17,14 @@ $(function(){
         }
     });
 
-    /**
-     * 用户的状态管理
-     * 1.获取操作按钮 并且添加点击事件
-     * 2.判断当前操作是禁用操作还是启用操作
-     * 3.根据当前的操作 调用接口 传递不同的参数
-     * 4.刷新页面
-     */
-
+    //启/禁用操作
     $('#user-box').on('click', '.edit-btn', function(){
         // 当前用户的状态
         var isDelete = $(this).attr('data-isdelete');
+        console.log(isDelete);
         // 用户ID
         var id = $(this).attr('data-id');
+        console.log(id);
         $.ajax({
             url: '/user/updateUser',
             type: 'post',
@@ -37,10 +33,26 @@ $(function(){
                 isDelete: isDelete ? 0 : 1
             },
             success: function(res) {
+                //console.log(isDelete);
+                //console.log(res);
                 if(res.success){
                     location.reload();
                 }
             }
         })
     });
+    //用户退出操作
+    $('#logout').on('click',function() {
+        $.ajax({
+            url: '/employee/employeeLogout',
+            type: 'get',
+            success: function (result) {
+                if (result.success) {
+                    location.href = "login.html";
+                } else {
+                    alert('退出登录失败');
+                }
+            }
+        })
+    })
 });
